@@ -14,6 +14,7 @@ public:
 		temp.m_b = this->m_b + p.m_b;
 		return temp;
 	}
+
 	int m_a;
 	int m_b;
 
@@ -26,6 +27,15 @@ public:
 //	temp.m_b = p1.m_b + p2.m_b;
 //	return temp;
 //}
+
+// Preson+int类型
+Preson operator+(Preson& p1, int mun)
+{
+	Preson temp;
+	temp.m_a = p1.m_a + mun;
+	temp.m_b = p1.m_b + mun;
+	return temp;
+}
 void test01()
 {
 	Preson p1;
@@ -39,8 +49,12 @@ void test01()
 	//全局函数重载加号的本质
 	//Preson p3 = operator+(p1, p2);
 	Preson p3 = p1 + p2;
+	Preson p4 = p1 + 100;
 	cout << "p3.m_a=" << p3.m_a << endl;
 	cout << "p3.m_b=" << p3.m_b << endl;
+	cout << "p4.m_a=" << p4.m_a << endl;
+	cout << "p4.m_b=" << p4.m_b << endl;
+
 }
 
 int main(void)
